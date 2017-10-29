@@ -12,43 +12,39 @@
 <body>
 	<div class="layui-layout">
 	<ul class="layui-nav">
-	  <li class="layui-nav-item right">
+	  <li class="layui-nav-item">
 	    <a href=""><i class="layui-icon">&#xe68e;</i>首页</a>
 	  </li>
+	  <li class="layui-nav-item"><a href="./linux/index.html">Linux 基础</a></li>
+	  <li class="layui-nav-item"><a href="./django/index.html">Django</a></li>
+	  <li class="layui-nav-item"><a href="./tornado/index.html">Tornado</a></li>
+	  <li class="layui-nav-item"><a href="./微信公众号/index.html">微信公众号</a></li>
 	 </ul>
 	 <ul class="layui-nav layui-layout-right">
 	  <li class="layui-nav-item">
 	    <a href="http://wpa.qq.com/msgrd?v=3&uin=1343123161&site=qq&menu=yes" target="_blank">
-		    <img src="https://qlogo2.store.qq.com/qzone/1343123161/1343123161/100?1508213865" class="layui-nav-img">About me<span class="layui-badge">1</span>
+		    <img src="./layui/Lifetime.jpg" class="layui-nav-img">About me<span class="layui-badge">1</span>
 	    </a>
 	  </li>
 	</ul>
 	</div>
-	<div class="layui-tab layui-tab-brief" lay-filter="deploy_url">
-	  <ul class="layui-tab-title">
-	    <li class="layui-this">学习GitBook</li>
-	    <li><a href="./linux/index.html">Linux 基础</a></li>
-	    <li><a href="./django/index.html">Django</a></li>
-	    <li><a href="./tornado/index.html">Tornado</a></li>
-	    <li><a href="./微信公众号/index.html">微信公众号</a></li>
-	  </ul>
-	  <div class="layui-tab-content" style="padding-left:unset;">
-		<div class="layui-tab-item layui-show">
-		</div>
-	  </div>
-	</div>   
+	<img width="100%" lay-src="./layui/bg.jpg" />	
 </body>
 
 <script src="./layui/layui.js" charset="utf-8"></script>
 
 <script>
-layui.use(['element'], function(){
+layui.use(['element','flow'], function(){
   var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
   //监听导航点击
   element.on('nav(demo)', function(elem){
     //console.log(elem)
     layer.msg(elem.text());
   });
+  var flow = layui.flow;
+  //当你执行这样一个方法时，即对页面中的全部带有lay-src的img元素开启了懒加载（当然你也可以指定相关img）
+  flow.lazyimg(); 
 });
+
 </script>
 </html>
