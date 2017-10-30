@@ -102,7 +102,7 @@ $(function() {
     setTimeout(function() {
       $.ajax({
         type: 'POST',
-        url: '/api/query',
+        url: '',
         data: JSON.stringify(request),
         dataType: 'json',
         contentType: 'application/json; charset=utf-8'
